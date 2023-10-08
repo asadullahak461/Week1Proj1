@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/textviewhello"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Hello!"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:textSize="30sp"/>
+
+    <EditText
+        android:id="@+id/nameet"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/textviewhello"
+        android:layout_marginLeft="40dp"
+        android:hint="Name"
+        android:paddingLeft="30dp" />
+
+    <EditText
+        android:id="@+id/emailet"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/nameet"
+        android:layout_marginLeft="40dp"
+        android:hint="Email"
+        android:paddingLeft="30dp" />
+
+    <EditText
+        android:id="@+id/numberet"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/emailet"
+        android:layout_marginLeft="40dp"
+        android:hint="Contac Number"
+        android:paddingLeft="30dp" />
+
+    <EditText
+        android:id="@+id/passet"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/numberet"
+        android:layout_marginLeft="40dp"
+        android:hint="Password"
+        android:paddingLeft="30dp" />
+
+    <EditText
+        android:id="@+id/ageet"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:hint="Age"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:layout_below="@id/passet"
+        android:layout_marginLeft="40dp"/>
+
+    <Button
+    android:id="@+id/btnSignUp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="SignUp"
+    android:padding="20dp"
+    android:layout_below="@id/passet"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/txtlogin"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/btnSignUp"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Already Registered? Login Now"/>
+
+
+
+</RelativeLayout>
