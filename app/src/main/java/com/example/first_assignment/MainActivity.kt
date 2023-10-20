@@ -2,12 +2,17 @@ package com.example.first_assignment
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
 import com.example.first_assignment.databinding.ActivityMainBinding
+import com.example.first_assignment.room.AppDatabase
+import com.example.first_assignment.room.DatabaseBuilder
+import com.example.first_assignment.room.login
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var database: AppDatabase
+
 
     val email = "asad@gmail.com"
     val password = "asad1"
@@ -18,20 +23,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        database = DatabaseBuilder.getInstance(this)
+
         binding.txtregister.setOnClickListener {
             intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnlogin.setOnClickListener {
-            if (binding.emailet.text.toString() == email && binding.passwordet.text.toString() == password) {
-                Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
-            }else {
-                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-            }
+            var email = binding.emailet.text.toString()
+            var password = binding.passwordet.text.toString()
+
+            val myObj = login(email = email, password = password)
+            database.userDao().insertLogin(myObj)
+
         }
 
     }
-
 
 }
